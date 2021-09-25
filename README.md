@@ -115,7 +115,7 @@ Any questions? Feel free to contact me at davidseyrich@outlook.com
 | " | 23 | Incomplete |
 | " | 24 | Incomplete |
 | " | 25 | Incomplete |
-|:----:|:---:|:----------------------------:|
+
 | 2019 | 1 | Incomplete |
 | " | 2 | Incomplete |
 | " | 3 | Incomplete |
