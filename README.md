@@ -15,9 +15,9 @@ Any questions? Feel free to contact me at davidseyrich@outlook.com
 | 2015 | 1 | Complete |
 | " | 2 | Complete |
 | " | 3 | Complete |
-| " | 4 | Incomplete |
-| " | 5 | Incomplete |
-| " | 6 | Incomplete |
+| " | 4 | Complete |
+| " | 5 | Complete |
+| " | 6 | Complete |
 | " | 7 | Incomplete |
 | " | 8 | Incomplete |
 | " | 9 | Incomplete |
