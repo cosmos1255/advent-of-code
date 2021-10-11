@@ -67,7 +67,7 @@ public class DayTwo {
 			int[] ret_arr = d2.solution(input);
 			System.out.println("Total square feet needed: " + ret_arr[0]);
 			System.out.println("Total feet of ribbon needed: " + ret_arr[1]);
-
+			sc.close();
 		} catch (FileNotFoundException e) {}
 	}
 }

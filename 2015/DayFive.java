@@ -109,6 +109,7 @@ public class DayFive {
 			}
 			System.out.println("Part 1: There were " + nice_counter + " nice strings.");
 			System.out.println("Part 2: There were " + nice_counter_2 + " nice strings.");
+			sc.close();
 		} catch (FileNotFoundException e) {}
 	}
 }

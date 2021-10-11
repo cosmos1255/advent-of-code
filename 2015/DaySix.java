@@ -140,6 +140,7 @@ public class DaySix {
 			}
 			System.out.println("The number of lights on: " + d6.countLights());
 			System.out.println("Brightness: " + d6.countLights2());
+			sc.close();
 		} catch (FileNotFoundException e) {}
 	}
 }

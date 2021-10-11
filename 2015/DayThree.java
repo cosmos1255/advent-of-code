@@ -146,7 +146,7 @@ public class DayThree {
 			int[] ret_arr = d3.solution(input);
 			System.out.println("Houses visited " + ret_arr[0]);
 			System.out.println("Santa houses + robo houses visited: " + ret_arr[1]);
-
+			sc.close();
 		} catch (FileNotFoundException e) {}
 	}
 }

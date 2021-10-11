@@ -39,6 +39,7 @@ public class DayOne {
 			int[] ret_arr = d1.solution(input);
 			System.out.println("Final floor: " + ret_arr[0]);
 			System.out.println("First basement entrance position: " + ret_arr[1]);
+			sc.close();
 		} catch (FileNotFoundException e) {}
 	}
 }
