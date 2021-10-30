@@ -73,6 +73,7 @@ public class DayEight {
             int[] sol = d8.solution(input);
             System.out.println("Characters - string chars = " + sol[0]);
             System.out.println("New encoded chars - Characters = " + sol[1]);
+            sc.close();
         } catch (FileNotFoundException e) {}
     }
 }

@@ -18,8 +18,8 @@ Any questions? Feel free to contact me at davidseyrich@outlook.com
 | " | 4 | Complete |
 | " | 5 | Complete |
 | " | 6 | Complete |
-| " | 7 | Incomplete |
-| " | 8 | Incomplete |
+| " | 7 | Complete |
+| " | 8 | Complete |
 | " | 9 | Incomplete |
 | " | 10 | Incomplete |
 | " | 11 | Incomplete |
