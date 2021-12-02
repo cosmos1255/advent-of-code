@@ -13,7 +13,7 @@ Any questions? Feel free to contact me at davidseyrich@outlook.com
 | Year | Day | Status (Complete/Incomplete) |
 |:----:|:---:|:----------------------------:|
 | 2021 | 1 | Complete |
-| " | 2 | Incomplete |
+| " | 2 | Complete |
 | " | 3 | Incomplete |
 | " | 4 | Incomplete |
 | " | 5 | Incomplete |

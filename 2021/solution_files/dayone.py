@@ -18,9 +18,9 @@ def part_two(input, input_len):
             count+=1
     return count
 
-def solution(input):
+def dayone(input):
     # process input
-    input_len = len(input)-1 # subtract 1 for the empty string
+    input_len = len(input)
     new_list = []
     for i in range(0, input_len):
         new_list.append(int(input[i], 10))

@@ -3,7 +3,8 @@
 # 
 # Link to AoC 2021: https://adventofcode.com/2021/
 
-import dayone
+from solution_files.dayone import dayone
+from solution_files.daytwo import daytwo
 
 def fileIO_strings(filename):
     input_data = []
@@ -12,11 +13,18 @@ def fileIO_strings(filename):
     return input_data
 
 def main():
+    input_filename = './input-files/'
     # Day One solution
-    d1_filename = '../input-files/day-one-input.txt'
+    d1_filename = input_filename + 'day-one-input.txt'
     d1_input = fileIO_strings(d1_filename)
     # print(d1_input)
-    dayone.solution(d1_input)
+    dayone(d1_input)
+
+    # Day Two Solution
+    d2_filename = input_filename + 'day-two-input.txt'
+    d2_input = fileIO_strings(d2_filename)
+    # print(d2_input)
+    daytwo(d2_input)
 
 if __name__=="__main__":
     main()
