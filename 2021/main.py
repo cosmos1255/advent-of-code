@@ -5,6 +5,7 @@
 
 from solution_files.dayone import dayone
 from solution_files.daytwo import daytwo
+from solution_files.daythree import daythree
 
 def fileIO_strings(filename):
     input_data = []
@@ -25,6 +26,12 @@ def main():
     d2_input = fileIO_strings(d2_filename)
     # print(d2_input)
     daytwo(d2_input)
+
+    # Day Three Solution
+    d3_filename = input_filename + 'day-three-input.txt'
+    d3_input = fileIO_strings(d3_filename)
+    # print(d3_input)
+    daythree(d3_input)
 
 if __name__=="__main__":
     main()
