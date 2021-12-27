@@ -72,9 +72,9 @@ def parttwo(input):
     co2 = []
     for i in o2:
         co2.append(int(not i))
-    print(input_copy)
-    print(o2)
-    print(co2)
+    # print(input_copy)
+    # print(o2)
+    # print(co2)
     o2 = binToInt(o2)
     co2 = binToInt(co2)
 
