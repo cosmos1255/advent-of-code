@@ -15,7 +15,7 @@ Any questions? Feel free to contact me at davidseyrich@outlook.com
 | 2021 | 1 | Complete |
 | " | 2 | Complete |
 | " | 3 | Incomplete |
-| " | 4 | Incomplete |
+| " | 4 | Complete |
 | " | 5 | Incomplete |
 | " | 6 | Incomplete |
 | " | 7 | Incomplete |
