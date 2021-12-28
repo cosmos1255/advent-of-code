@@ -7,6 +7,8 @@ from solution_files.dayone import dayone
 from solution_files.daytwo import daytwo
 from solution_files.daythree import daythree
 from solution_files.dayfour import dayfour
+from solution_files.dayfive import dayfive
+from solution_files.daysix import daysix
 
 def fileIO_bingo(filename):
     input_nums = []
@@ -34,30 +36,49 @@ def fileIO_strings(filename):
 
 def main():
     input_filename = './input-files/'
+
     # Day One solution
     d1_filename = input_filename + 'day-one-input.txt'
     d1_input = fileIO_strings(d1_filename)
     # print(d1_input)
     dayone(d1_input)
     print()
+
     # Day Two Solution
     d2_filename = input_filename + 'day-two-input.txt'
     d2_input = fileIO_strings(d2_filename)
     # print(d2_input)
     daytwo(d2_input)
     print()
+
     # Day Three Solution
     d3_filename = input_filename + 'day-three-input.txt'
     d3_input = fileIO_strings(d3_filename)
     # print(d3_input)
     daythree(d3_input)
     print()
+
     # Day Four Solution
     d4_filename = input_filename + 'day-four-input.txt'
     (d4_input, d4_input_boards) = fileIO_bingo(d4_filename)
-    print(d4_input)
-    print(d4_input_boards)
+    # print(d4_input)
+    # print(d4_input_boards)
     dayfour(d4_input, d4_input_boards)
+    print()
+
+    # Day Five Solution
+    d5_filename = input_filename + 'day-five-input.txt'
+    d5_input = fileIO_strings(d5_filename)
+    # print(d5_input)
+    dayfive(d5_input)
+    print()
+
+    # Day Six Solution
+    d6_filename = input_filename + 'day-six-input.txt'
+    d6_input = fileIO_strings(d6_filename)
+    # print(d6_input)
+    daysix(d6_input)
+    print()
 
 if __name__=="__main__":
     main()
