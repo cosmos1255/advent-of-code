@@ -17,19 +17,23 @@ def parseInput(input):
     return (coord_1_x, coord_1_y, coord_2_x, coord_2_y)
 
 def mark_danger(ocean, hor_vert, hor_vert_coord, p1, p2):
+    if (p2 < p1):
+        temp = p2
+        p2 = p1
+        p1 = temp
     if (hor_vert): # for vertical danger
-        for i in range(p1, p2):
+        for i in range(p1, p2+1):
             ocean[i][hor_vert_coord] += 1
     if (not hor_vert): # for horizontal danger
-        for i in range(p1, p2):
+        for i in range(p1, p2+1):
             ocean[hor_vert_coord][i] += 1
 
     return ocean
 
-def count_danger_spaces(ocean):
+def count_danger_spaces(ocean, n):
     count = 0
-    for i in range(len(ocean[0])):
-        for j in range(len(ocean[0])):
+    for i in range(n):
+        for j in range(n):
             if (ocean[i][j] > 1):
                 count += 1
     return count
@@ -43,8 +47,8 @@ def partone(c1x, c1y, c2x, c2y):
             ocean = mark_danger(ocean, 0, c1x[i], c1y[i], c2y[i])
         if (c1y[i] == c2y[i]):
             ocean = mark_danger(ocean, 1, c1y[i], c1x[i], c2x[i])
-    print(ocean)
-    return count_danger_spaces(ocean)
+    # print(ocean)
+    return count_danger_spaces(ocean, 1000)
 
 
 def dayfive(input):
