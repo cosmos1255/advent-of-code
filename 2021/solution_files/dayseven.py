@@ -82,4 +82,4 @@ def dayseven(input):
     # print(input)
     print("Day 7 Solution:")  
     print("PART1: Fuel used: ", partone(input))
-    print("PART2: Fuel used with new adding: ", parttwo(input))
+    # print("PART2: Fuel used with new adding: ", parttwo(input))
