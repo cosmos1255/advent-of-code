@@ -11,6 +11,7 @@ from solution_files.dayfive import dayfive
 from solution_files.daysix import daysix
 from solution_files.dayseven import dayseven
 from solution_files.dayeight import dayeight
+from solution_files.daynine import daynine
 
 def fileIO_bingo(filename):
     input_nums = []
@@ -94,6 +95,13 @@ def main():
     d8_input = fileIO_strings(d8_filename)
     # print(d8_input)
     dayeight(d8_input)
+    print()
+
+    # Day Nine Solution
+    d9_filename = input_filename + 'day-nine-input.txt'
+    d9_input = fileIO_strings(d9_filename)
+    print(d9_input)
+    daynine(d9_input)
     print()
 
 if __name__=="__main__":
