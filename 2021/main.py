@@ -92,7 +92,7 @@ def main():
     # Day Eight Solution
     d8_filename = input_filename + 'day-eight-input.txt'
     d8_input = fileIO_strings(d8_filename)
-    print(d8_input)
+    # print(d8_input)
     dayeight(d8_input)
     print()
 
