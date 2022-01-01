@@ -14,12 +14,12 @@ Any questions? Feel free to contact me at davidseyrich@outlook.com
 |:----:|:---:|:----------------------------:|
 | 2021 | 1 | Complete |
 | " | 2 | Complete |
-| " | 3 | Incomplete |
+| " | 3 | Part 1 Only |
 | " | 4 | Complete |
 | " | 5 | Incomplete |
-| " | 6 | Incomplete |
-| " | 7 | Incomplete |
-| " | 8 | Incomplete |
+| " | 6 | Complete |
+| " | 7 | Complete |
+| " | 8 | Part 1 Only |
 | " | 9 | Incomplete |
 | " | 10 | Incomplete |
 | " | 11 | Incomplete |
