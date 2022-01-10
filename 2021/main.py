@@ -13,6 +13,7 @@ from solution_files.dayseven import dayseven
 from solution_files.dayeight import dayeight
 from solution_files.daynine import daynine
 from solution_files.dayten import dayten
+from solution_files.dayeleven import dayeleven
 
 def fileIO_bingo(filename):
     input_nums = []
@@ -40,76 +41,68 @@ def fileIO_strings(filename):
 
 def main():
     input_filename = './input-files/'
+    day_filenames = ['day-one-input.txt', 'day-two-input.txt', 'day-three-input.txt', 
+        'day-four-input.txt', 'day-five-input.txt', 'day-six-input.txt', 'day-seven-input.txt', 
+        'day-eight-input.txt', 'day-nine-input.txt', 'day-ten-input.txt', 'day-eleven-input.txt']
+    inputs = []
 
+    for i, day in enumerate(day_filenames):
+        filename = input_filename + day
+        print(filename, ' ', i)
+        if (i == 3): # day 4
+            (input_0, input_1) = fileIO_bingo(filename)
+            inputs.append(input_0)
+            inputs.append(input_1)
+            continue
+        else: # day 1-3, 5-25
+            input = fileIO_strings(filename)
+            inputs.append(input)
+
+    # print(inputs)
+            
     # Day One solution
-    d1_filename = input_filename + 'day-one-input.txt'
-    d1_input = fileIO_strings(d1_filename)
-    # print(d1_input)
-    dayone(d1_input)
+    dayone(inputs[0])
     print()
 
     # Day Two Solution
-    d2_filename = input_filename + 'day-two-input.txt'
-    d2_input = fileIO_strings(d2_filename)
-    # print(d2_input)
-    daytwo(d2_input)
+    daytwo(inputs[1])
     print()
 
     # Day Three Solution
-    d3_filename = input_filename + 'day-three-input.txt'
-    d3_input = fileIO_strings(d3_filename)
-    # print(d3_input)
-    daythree(d3_input)
+    daythree(inputs[2])
     print()
 
     # Day Four Solution
-    d4_filename = input_filename + 'day-four-input.txt'
-    (d4_input, d4_input_boards) = fileIO_bingo(d4_filename)
-    # print(d4_input)
-    # print(d4_input_boards)
-    dayfour(d4_input, d4_input_boards)
+    # dayfour(3: input, 4: input_boards)
+    dayfour(inputs[3], inputs[4])
     print()
 
     # Day Five Solution
-    d5_filename = input_filename + 'day-five-input.txt'
-    d5_input = fileIO_strings(d5_filename)
-    # print(d5_input)
-    dayfive(d5_input)
+    dayfive(inputs[5])
     print()
 
     # Day Six Solution
-    d6_filename = input_filename + 'day-six-input.txt'
-    d6_input = fileIO_strings(d6_filename)
-    # print(d6_input)
-    daysix(d6_input)
+    daysix(inputs[6])
     print()
 
     # Day Seven Solution
-    d7_filename = input_filename + 'day-seven-input.txt'
-    d7_input = fileIO_strings(d7_filename)
-    # print(d7_input)
-    dayseven(d7_input)
+    dayseven(inputs[7])
     print()
 
     # Day Eight Solution
-    d8_filename = input_filename + 'day-eight-input.txt'
-    d8_input = fileIO_strings(d8_filename)
-    # print(d8_input)
-    dayeight(d8_input)
+    dayeight(inputs[8])
     print()
 
     # Day Nine Solution
-    d9_filename = input_filename + 'day-nine-input.txt'
-    d9_input = fileIO_strings(d9_filename)
-    # print(d9_input)
-    daynine(d9_input)
+    daynine(inputs[9])
     print()
 
     # Day Ten Solution
-    d10_filename = input_filename + 'day-ten-input.txt'
-    d10_input = fileIO_strings(d10_filename)
-    # print(d10_input)
-    dayten(d10_input)
+    dayten(inputs[10])
+    print()
+
+    # Day Eleven Solution
+    dayeleven(inputs[11])
     print()
 
 if __name__=="__main__":
