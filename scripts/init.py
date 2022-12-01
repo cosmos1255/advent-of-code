@@ -11,7 +11,9 @@ Author: David Eyrich
 import time
 import requests
 import argparse
+import os
 from request_data import USER_AGENT, SESSION_ID
+from file_templates import SINGLE_DAY_PYTHON_SCRIPT
     
 def getCurTime():
     cur_time = time.time()
@@ -105,7 +107,14 @@ def entry():
     data = grabData(year, day)
     
     # create proper files to be used
-
+    soln_path = f"{year}/solutions/day{day}.py"
+    input_path = f"{year}/input/day{day}_input.txt"
+     
+    with open(soln_path, 'w') as f_soln:
+        f_soln.write(SINGLE_DAY_PYTHON_SCRIPT.format(YEAR=year, DAY=day))
+    
+    with open(input_path, "wb") as f_input:
+        f_input.write(data)
     
 if __name__=="__main__":
     entry()

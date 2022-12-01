@@ -1,6 +1,6 @@
-SINGLE_DAY_PYTHON_SCRIPT = """\"\"\"Advent of Code {YEAR}, Day: {DAY}
+"""Advent of Code 2021, Day: 24
 Author: David Eyrich
-Link: https://adventofcode.com/{YEAR}/day/{DAY}\"\"\"
+Link: https://adventofcode.com/2021/day/24"""
 
 from scripts.submit_ans import submit
 
@@ -24,12 +24,12 @@ def partB(input):
 
 def main():
     print("Main")
-    input = parseInput("../input/day{DAY}_input.txt")
+    input = parseInput("../input/day24_input.txt")
     
     # uncomment below to submit part A
     # ansA = partA(input)
-    # submit(1, ansA, {YEAR}, {DAY})
+    # submit(1, ansA, 2021, 24)
     
     # uncomment below to submit part B
     # andB = partB(input)
-    # submit(2, ansB, {YEAR}, {DAY})"""
+    # submit(2, ansB, 2021, 24)
