@@ -10,7 +10,7 @@ I am a professional programmer but still very much a beginner at certain topics 
 
 | Year | Day | Status (Complete/Incomplete) |
 |:----:|:---:|:----------------------------:|
-| 2022 | 1 | Incomplete |
+| 2022 | 1 | Complete |
 | " | 2 | Incomplete |
 | " | 3 | Incomplete |
 | " | 4 | Incomplete |

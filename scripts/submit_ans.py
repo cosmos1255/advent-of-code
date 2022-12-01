@@ -9,11 +9,11 @@ def submit(level, answer, year, day):
     
     message = day_res.content
     
-    if "That's the right answer" in message:
+    if b"That's the right answer" in message:
         print("You got the correct answer!!")
-    elif "Did you already complete it" in message:
+    elif b"Did you already complete it" in message:
         print("Already completed this challenge.")
-    elif "That's not the right answer" in message:
+    elif b"That's not the right answer" in message:
         print("Wrong answer, try again.")
-    elif "You gave an answer too recently" in message:
+    elif b"You gave an answer too recently" in message:
         print("Gave an answer too recently, try again later.")
