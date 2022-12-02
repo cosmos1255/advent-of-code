@@ -107,11 +107,14 @@ def entry():
     data = grabData(year, day)
     
     # create proper files to be used
-    soln_path = f"{year}/solutions/day{day}.py"
-    input_path = f"{year}/input/day{day}_input.txt"
+    day_path = f"{year}/day{day}"
+    os.system(f"mkdir -p {day_path}")
+    soln_path = f"{year}/day{day}/day{day}.py"
+    input_path = f"{year}/day{day}/day{day}_input.txt"
      
     with open(soln_path, 'w') as f_soln:
-        f_soln.write(SINGLE_DAY_PYTHON_SCRIPT.format(YEAR=year, DAY=day))
+        f_soln.write(SINGLE_DAY_PYTHON_SCRIPT.format(YEAR=year, DAY=day,
+                                                     scripts_path_join="{scripts_path_join}"))
     
     with open(input_path, "wb") as f_input:
         f_input.write(data)

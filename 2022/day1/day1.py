@@ -76,7 +76,7 @@ def partB(input):
 
 def entry():
     print("entry")
-    input = parseInput("../input/day1_input.txt")
+    input = parseInput("day1_input.txt")
     
     # uncomment below to submit part A
     ansA = partA(input)
