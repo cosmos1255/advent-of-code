@@ -109,15 +109,21 @@ def entry():
     # create proper files to be used
     day_path = f"{year}/day{day}"
     os.system(f"mkdir -p {day_path}")
-    soln_path = f"{year}/day{day}/day{day}.py"
-    input_path = f"{year}/day{day}/day{day}_input.txt"
-     
-    with open(soln_path, 'w') as f_soln:
-        f_soln.write(SINGLE_DAY_PYTHON_SCRIPT.format(YEAR=year, DAY=day,
-                                                     scripts_path_join="{scripts_path_join}"))
+    soln_path = f"{day_path}/day{day}.py"
+    input_path = f"{day_path}/day{day}_input.txt"
     
-    with open(input_path, "wb") as f_input:
-        f_input.write(data)
+    if (not os.path.exists(soln_path)):
+        with open(soln_path, 'w') as f_soln:
+            f_soln.write(SINGLE_DAY_PYTHON_SCRIPT.format(YEAR=year, DAY=day,
+                                                        scripts_path_join="{scripts_path_join}"))
+    else:
+        print(f"{year}, Day {day} solution file already exists.")
+        
+    if (not os.path.exists(input_path)):
+        with open(input_path, "wb") as f_input:
+            f_input.write(data)
+    else:
+        print(f"{year}, Day {day} input file already exists.")
     
 if __name__=="__main__":
     entry()

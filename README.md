@@ -12,7 +12,7 @@ I am a professional programmer but still very much a beginner at certain topics 
 |:----:|:---:|:----------------------------:|
 | 2022 | 1 | Complete |
 | " | 2 | Complete |
-| " | 3 | Incomplete |
+| " | 3 | Complete |
 | " | 4 | Incomplete |
 | " | 5 | Incomplete |
 | " | 6 | Incomplete |
