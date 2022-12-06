@@ -31,7 +31,7 @@ def partB(input):
     return 0
 
 def entry():
-    print("entry")
+    print("{YEAR}:Day{DAY}")
     input = parseInput("day{DAY}_input.txt")
     
     # uncomment below to submit part A

@@ -61,7 +61,7 @@ def partB(input):
     return myScore
 
 def entry():
-    print("entry")
+    print("2022:Day2")
     input = parseInput("day2_input.txt")
     
     # uncomment below to submit part A

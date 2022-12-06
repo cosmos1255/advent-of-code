@@ -75,7 +75,7 @@ def partB(input):
     return sum_of_max
 
 def entry():
-    print("entry")
+    print("2022:Day1")
     input = parseInput("day1_input.txt")
     
     # uncomment below to submit part A

@@ -92,7 +92,7 @@ def partB(input):
     return num_overlap
 
 def entry():
-    print("entry")
+    print("2022:Day4")
     input = parseInput("day4_input.txt")
     
     # uncomment below to submit part A

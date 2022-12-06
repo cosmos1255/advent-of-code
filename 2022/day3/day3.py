@@ -70,7 +70,7 @@ def partB(input):
     return sum
 
 def entry():
-    print("entry")
+    print("2022:Day3")
     input = parseInput("day3_input.txt")
     
     # uncomment below to submit part A
