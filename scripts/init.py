@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Script to initialize a new day for Advent of Code.
 This script will basically grab the input and puzzle clue
 from the Advent of Code website.
@@ -121,7 +122,7 @@ def entry():
         
     if (not os.path.exists(input_path)):
         with open(input_path, "wb") as f_input:
-            f_input.write(data)
+            f_input.write(data[:-1])
     else:
         print(f"{year}, Day {day} input file already exists.")
     
