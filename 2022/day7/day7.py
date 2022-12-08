@@ -26,28 +26,63 @@ def partA(input):
     print("Part A")
     
     dirs = {}
+    level = 0
     parent_dirs = []
     cur_dir = ''
+    cur_dir_size = 0
     
     for cmd in input:
         cmd_list = cmd.split(' ')
         if (cmd_list[0] == '$'):
             if (cmd_list[1] == "cd"):
-                if (cur_dir is not ''):
+                if (dirs == {}):
+                    # should only enter here once
+                    cur_dir = "MAIN_DIR"
+                    dirs[cur_dir] = (0, {})
                     parent_dirs.append(cur_dir)
-                if (dirs.__contains__(cmd_list[2])):
-                    # just pass through
-                    cur_dir = cmd_list[2]
                 else:
-                    dirs.update(cmd_list[2], [])
-                    cur_dir = cmd_list[2]
+                    if (cmd_list[2] == ".."):
+                        level -= 1
+                        cur_dir = parent_dirs.pop()
+                    else:
+                        level += 1
+                        parent_dirs.append(cur_dir)
+                        cur_dir = cmd_list[2]
+                    
+                        cur_level = level
+                        next_dir = dirs[parent_dirs[::-1][cur_level]]
+                        while (cur_level > 0):
+                            cur_level -= 1
+                            next_dir = next_dir[1][parent_dirs[::-1][cur_level]]
+                        next_dir[1][cmd_list[2]] = (0, {})
+                        
+                        
+                        
             elif (cmd_list[1] == "ls"):
                 continue
         else:
-            if (cmd_list[0] == )
-                            
+            if (cmd_list[0] == "dir"):
+                cur_level = level
+                next_dir = dirs[parent_dirs[::-1][cur_level]]
+                while (cur_level > 0):
+                    cur_level -= 1
+                    next_dir = next_dir[1][parent_dirs[::-1][cur_level]]
+                next_dir[1][cmd_list[1]] = (0, {})
+                print(dirs)
                     
-    return 0
+            
+                
+    # print(dirs)
+    
+    # find how many are under 100000 and add to sum
+    # sum_of_vals = 0
+    # for dir in dirs:
+    #     vals = dir.values()
+    #     for size in vals:
+    #         if (size < 100000):
+    #             sum_of_vals += size
+         
+    return sum_of_vals
 
 def partB(input):
     print("Part B")
