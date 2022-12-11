@@ -12,6 +12,18 @@ sys.path.append(f"{scripts_path_join}/scripts")
 
 from submit_ans import submit
 
+class LinkedList():
+    def __init__(self, dir, val):
+        self._dir = dir
+        self._val = val
+        self._children = {}
+    
+    def addChild(self, dir, val):
+        self._children[dir] = LinkedList(dir, 0)
+        
+    def increaseSize(self, val):
+        self._val += val
+
 def parseInput(filename):
     # read in from a file
     with open(filename, 'r') as f:
