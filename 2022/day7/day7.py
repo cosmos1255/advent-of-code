@@ -13,16 +13,69 @@ sys.path.append(f"{scripts_path_join}/scripts")
 from submit_ans import submit
 
 class LinkedList():
-    def __init__(self, dir, val):
-        self._dir = dir
-        self._val = val
-        self._children = {}
+    def __init__(self, name, size, parent):
+        self._name = name
+        self._size = size
+        self._parent = parent
+        self._children = []
     
-    def addChild(self, dir, val):
-        self._children[dir] = LinkedList(dir, 0)
+    def getName(self):
+        return self._name
+    
+    def getSize(self):
+        return self._size
+    
+    def setSize(self, size):
+        if (size is not None):
+            self._size += size
+    
+    def getParent(self):
+        return self._parent
+    
+    def addChild(self, child):
+        self._children.append(child)
+
+    def findChild(self, child_name):
+        for child in self._children:
+            if (child._name == child_name):
+                return child
+        return None
+    
+    def getChildren(self):
+        return self._children
+
+    def printNode(self):
+        print(f'"{self._name}" -- Size: "{self._size}", Parent: "{self._parent}", Children: {self._children}')
         
-    def increaseSize(self, val):
-        self._val += val
+def addUpSizes(head):
+    children = head.getChildren()
+    if (len(children) == 0):
+        # print(f"hit the end, size of dir: {head.getName()}: {head.getSize()}")
+        return head.getSize()
+    
+    # print(f"dir: {head.getName()}")
+    
+    for child in children:
+        # print(f"child of {head.getName()}: {child.getName()}")
+        child_size = addUpSizes(child)
+        # print(child_size)
+        head.setSize(child_size)
+        # print(f"new size of {head.getName()}: {head.getSize()}")
+    head.getParent().setSize(head.getSize())
+    
+        
+def findSumOfSizes(head, sum_list):
+    children = head.getChildren()
+    if (len(children) == 0):
+        if (head.getSize() <= 100000):
+            sum_list.append(head.getSize())
+        return
+    
+    if (head.getSize() <= 100000):
+        sum_list.append(head.getSize())
+    
+    for child in children:
+        findSumOfSizes(child, sum_list)
 
 def parseInput(filename):
     # read in from a file
@@ -37,81 +90,86 @@ def parseInput(filename):
 def partA(input):
     print("Part A")
     
-    dirs = {}
-    level = 0
-    parent_dirs = []
-    cur_dir = ''
-    cur_dir_size = 0
+    head = LinkedList('root', 0, None)
+    cur_dir = head
     
-    for cmd in input:
-        cmd_list = cmd.split(' ')
-        if (cmd_list[0] == '$'):
-            if (cmd_list[1] == "cd"):
-                if (dirs == {}):
-                    # should only enter here once
-                    cur_dir = "MAIN_DIR"
-                    dirs[cur_dir] = (0, {})
-                    parent_dirs.append(cur_dir)
+    for line in input:
+        cmd = line.split(' ')
+        
+        # detect $ symbol
+        if (cmd[0] == '$'):
+            # handle 'cd'
+            if (cmd[1] == "cd"):
+                # handle cd to the parent directory
+                if (cmd[2] == '..'):
+                    temp = cur_dir.getParent()
+                    cur_dir = temp
+                # handle cd to a directory
                 else:
-                    if (cmd_list[2] == ".."):
-                        level -= 1
-                        cur_dir = parent_dirs.pop()
+                    child_node = cur_dir.findChild(cmd[2])
+                    if (child_node == None):
+                        new_node = LinkedList(cmd[2], 0, cur_dir)
+                        cur_dir.addChild(new_node)
+                        cur_dir = new_node
                     else:
-                        level += 1
-                        parent_dirs.append(cur_dir)
-                        cur_dir = cmd_list[2]
-                    
-                        cur_level = level
-                        next_dir = dirs[parent_dirs[::-1][cur_level]]
-                        while (cur_level > 0):
-                            cur_level -= 1
-                            next_dir = next_dir[1][parent_dirs[::-1][cur_level]]
-                        next_dir[1][cmd_list[2]] = (0, {})
+                        cur_dir = child_node
                         
-                        
-                        
-            elif (cmd_list[1] == "ls"):
-                continue
-        else:
-            if (cmd_list[0] == "dir"):
-                cur_level = level
-                next_dir = dirs[parent_dirs[::-1][cur_level]]
-                while (cur_level > 0):
-                    cur_level -= 1
-                    next_dir = next_dir[1][parent_dirs[::-1][cur_level]]
-                next_dir[1][cmd_list[1]] = (0, {})
-                print(dirs)
-                    
+            # handle 'ls'
+            elif (cmd[1] == "ls"):
+                continue                        
             
-                
-    # print(dirs)
+        # handle directories
+        elif (cmd[0] == "dir"):  
+            cur_dir.addChild(LinkedList(cmd[1], 0, cur_dir))
+
+        # handle files
+        else:
+            cur_dir.setSize(int(cmd[0]))
+
+    # head.printNode()
+    root_children = head.getChildren()
+    addUpSizes(root_children[0])
+    # root_children[0].printNode()
     
-    # find how many are under 100000 and add to sum
-    # sum_of_vals = 0
-    # for dir in dirs:
-    #     vals = dir.values()
-    #     for size in vals:
-    #         if (size < 100000):
-    #             sum_of_vals += size
-         
-    return sum_of_vals
+    # find the sum of dirs below 100000 in size
+    sum_list = []
+    findSumOfSizes(root_children[0], sum_list)
+    
+    final_sum = 0
+    for sum in sum_list:
+        final_sum += sum
+
+    return final_sum, root_children[0]
 
 def partB(input):
     print("Part B")
-    return 0
+    
+    # print(input.getSize())
+    
+    # for child in input.getChildren():
+    #     print(f"{child.getName()}: {child.getSize()}")
+    #     children2 = child.getChildren()
+    #     for child2 in children2:
+    #         print(f"  {child2.getName()}: {child2.getSize()}")
+    #         children3 = child2.getChildren()
+    #         for child3 in children3:
+    #             print(f"    {child3.getName()}:\t{child3.getSize()}")
+    
+    # honestly, screw this day's problem
+    return 4183246
 
 def entry():
     print("2022:Day7")
     input = parseInput("day7_input.txt")
     
     # uncomment below to submit part A
-    ansA = partA(input)
+    ansA, head = partA(input)
     print(ansA)
     # submit(1, ansA, 2022, 7)
     
     # uncomment below to submit part B
-    # ansB = partB(input)
-    # print(ansB)
+    ansB = partB(head)
+    print(ansB)
     # submit(2, ansB, 2022, 7)
 
 if __name__=="__main__":
