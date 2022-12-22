@@ -18,9 +18,17 @@ def parseInput(filename):
         input = f.read()
     
     # parse through input here
-    parsedInput = ''
+    parsedInput = input
     
     return parsedInput
+
+rocks = [
+    ['####'],
+    [' # \n###\n # '],
+    ['  #\n  #\n###'],
+    ['#\n#\n#\n#'],
+    ['##\n##']
+]
 
 def partA(input):
     print("Part A")
