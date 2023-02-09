@@ -18,7 +18,7 @@ I am a professional programmer but still very much a beginner at certain topics 
 | " | 6 | Complete |
 | " | 7 | Complete |
 | " | 8 | Complete |
-| " | 9 | Incomplete |
+| " | 9 | Part 1 Only |
 | " | 10 | Complete |
 | " | 11 | Complete |
 | " | 12 | Incomplete |
@@ -27,7 +27,7 @@ I am a professional programmer but still very much a beginner at certain topics 
 | " | 15 | Incomplete |
 | " | 16 | Incomplete |
 | " | 17 | Incomplete |
-| " | 18 | Incomplete |
+| " | 18 | Part 1 Only |
 | " | 19 | Incomplete |
 | " | 20 | Incomplete |
 | " | 21 | Incomplete |
