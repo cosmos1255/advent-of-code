@@ -84,8 +84,8 @@ def entry():
     # set up argparser to handle input if needed
     args = argparse.ArgumentParser(add_help=True)
     
-    args.add_argument('-y', default=f'{cur_year}', help='Enter the year of the Advent of Code challenge you would like.')
-    args.add_argument('-d', default=f'{cur_day}', help='Enter the day of the Advent of Code challenge you would like.')
+    args.add_argument('-y', help='Enter the year of the Advent of Code challenge you would like.')
+    args.add_argument('-d', help='Enter the day of the Advent of Code challenge you would like.')
     
     opts = args.parse_args()
     
@@ -96,7 +96,7 @@ def entry():
             print("ERROR: Both year and day are required to create challenge data.")
             exit(0)
     else:
-        if (opts.day is not None):
+        if (opts.d is not None):
             print("ERROR: Both year and day are required to create challenge data.")
             exit(0)
         else:
