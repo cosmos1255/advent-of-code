@@ -11,7 +11,7 @@ Author: David Eyrich
 
 import time
 import requests
-import argparse
+from argparse import aoc_mod_parse_args
 import os
 from request_data import USER_AGENT, SESSION_ID
 from file_templates import SINGLE_DAY_PYTHON_SCRIPT
@@ -81,13 +81,7 @@ def entry():
     cur_time = getCurTime()
     cur_year, cur_day = cur_time.tm_year, cur_time.tm_mday
     
-    # set up argparser to handle input if needed
-    args = argparse.ArgumentParser(add_help=True)
-    
-    args.add_argument('-y', help='Enter the year of the Advent of Code challenge you would like.')
-    args.add_argument('-d', help='Enter the day of the Advent of Code challenge you would like.')
-    
-    opts = args.parse_args()
+    opts = aoc_mod_parse_args()
     
     if (opts.y is not None):
         if (opts.d is not None):

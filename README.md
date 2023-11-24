@@ -6,7 +6,7 @@ For the longest time, I have wanted to create a repository for AoC challenge cod
 
 I am a professional programmer but still very much a beginner at certain topics while being intermediate at others. Hopefully this repository provides insight into different coding practices and topics. Enjoy!
 
-## Organization
+## 2023 Status
 
 | Year | Day | Status (Complete/Incomplete) |
 |:----:|:---:|:----------------------------:|

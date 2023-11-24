@@ -1,4 +1,4 @@
 *.class
 *.pyc
-scripts/__pycache__/
+__pycache__/*
 request_data.py

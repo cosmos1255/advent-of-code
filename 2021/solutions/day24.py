@@ -2,7 +2,7 @@
 Author: David Eyrich
 Link: https://adventofcode.com/2021/day/24"""
 
-from scripts.submit_ans import submit
+from modules.submit_ans import submit
 
 def parseInput(filename):
     # read in from a file
