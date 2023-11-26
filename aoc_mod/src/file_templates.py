@@ -8,7 +8,7 @@ import sys
 scripts_path = os.getcwd()
 scripts_path_split = scripts_path.split('/')
 scripts_path_join = '/'.join(scripts_path_split[:-2])
-sys.path.append(f"{scripts_path_join}/scripts")
+sys.path.append(f"{scripts_path_join}/aoc_mod/src")
 
 from sess_id_u_agent import USER_AGENT, SESSION_ID
 from submit_ans import submit
