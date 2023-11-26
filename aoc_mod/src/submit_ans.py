@@ -1,8 +1,7 @@
 import requests
-from request_data import USER_AGENT, SESSION_ID
 
 # may use this some day lmao, deff need to work on it though
-def submit(level, answer, year, day):
+def submit(level, answer, year, day, SESSION_ID, USER_AGENT):
     URL_DAY_MAIN = f'https://adventofcode.com/{year}/day/{day}/answer'
 
     day_res = requests.post(URL_DAY_MAIN, data={"level":level, "answer":answer}, cookies={'session': SESSION_ID, 'User-Agent': USER_AGENT})

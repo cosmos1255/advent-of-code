@@ -9,8 +9,10 @@ import math
 scripts_path = os.getcwd()
 scripts_path_split = scripts_path.split('/')
 scripts_path_join = '/'.join(scripts_path_split[:-2])
-sys.path.append(f"{scripts_path_join}/scripts")
+sys.path.append(f"{scripts_path_join}/aoc_mod/src")
 
+
+from sess_id_u_agent import USER_AGENT, SESSION_ID
 from submit_ans import submit
 
 def parseInput(filename):
@@ -110,7 +112,7 @@ def partB(input):
     tail_visited.append((loc_Ts[8][0], loc_Ts[8][1]))
     
     for cmd in input:
-        print(f'{loc_H} -- {loc_Ts}')
+        # print(f'{loc_H} -- {loc_Ts}')
         direction, dist = cmd.split(' ')
         dist = int(dist)
         
@@ -123,7 +125,7 @@ def partB(input):
         elif (direction == 'R'):
             loc_H[0] += dist
              
-        print(f'after H moves: {loc_H} -- {loc_Ts}')
+        # print(f'after H moves: {loc_H} -- {loc_Ts}')
         
         loc_prev = [loc_H[0],loc_H[1]]
         for i, loc_T in enumerate(loc_Ts):
@@ -145,12 +147,12 @@ def partB(input):
                 # count up the visited nodes for 9th tail
                 if (i == 8):
                     if (tail_visited.__contains__((loc_T[0], loc_T[1]))):
-                        print('visited')
+                        # print('visited')
                         continue
                     else:
                         tail_visited.append((loc_T[0], loc_T[1]))
             loc_prev = [loc_T[0], loc_T[1]]
-    print(f'{loc_H} -- {loc_Ts}')
+    # print(f'{loc_H} -- {loc_Ts}')
     
     return len(tail_visited)
 
@@ -161,11 +163,11 @@ def entry():
     # uncomment below to submit part A
     ansA = partA(input)
     print(ansA)
-    # submit(1, ansA, 2022, 9)
+    submit(1, ansA, 2022, 9, SESSION_ID, USER_AGENT)
     
     # uncomment below to submit part B
     ansB = partB(input)
-    print(ansB)
+    # print(ansB)
     # submit(2, ansB, 2022, 9)
 
 if __name__=="__main__":

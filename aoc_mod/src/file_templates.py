@@ -10,6 +10,7 @@ scripts_path_split = scripts_path.split('/')
 scripts_path_join = '/'.join(scripts_path_split[:-2])
 sys.path.append(f"{scripts_path_join}/scripts")
 
+from sess_id_u_agent import USER_AGENT, SESSION_ID
 from submit_ans import submit
 
 def parseInput(filename):
@@ -37,12 +38,12 @@ def entry():
     # uncomment below to submit part A
     # ansA = partA(input)
     # print(ansA)
-    # submit(1, ansA, {YEAR}, {DAY})
+    # submit(1, ansA, {YEAR}, {DAY}, SESSION_ID, USER_AGENT)
     
     # uncomment below to submit part B
     # ansB = partB(input)
     # print(ansB)
-    # submit(2, ansB, {YEAR}, {DAY})
+    # submit(2, ansB, {YEAR}, {DAY}, SESSION_ID, USER_AGENT)
 
 if __name__=="__main__":
     entry()'''

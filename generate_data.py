@@ -11,10 +11,19 @@ Author: David Eyrich
 
 import time
 import requests
-from argparse import aoc_mod_parse_args
+import argparse
 import os
-from request_data import USER_AGENT, SESSION_ID
-from file_templates import SINGLE_DAY_PYTHON_SCRIPT
+from aoc_mod.src.sess_id_u_agent import USER_AGENT, SESSION_ID
+from aoc_mod.src.file_templates import SINGLE_DAY_PYTHON_SCRIPT
+
+def aoc_mod_parse_args():
+    # set up argparser to handle input if needed
+    args = argparse.ArgumentParser(add_help=True)
+    
+    args.add_argument('-y', help='Enter the year of the Advent of Code challenge you would like.')
+    args.add_argument('-d', help='Enter the day of the Advent of Code challenge you would like.')
+    
+    return args.parse_args()
     
 def getCurTime():
     cur_time = time.time()
