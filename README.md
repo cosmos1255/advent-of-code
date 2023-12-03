@@ -10,9 +10,9 @@ I am a professional programmer but still very much a beginner at certain topics 
 
 | Year | Day | Status (Complete/Incomplete) |
 |:----:|:---:|:----------------------------:|
-| 2023 | 1 | Incomplete |
-| 2023 | 2 | Incomplete |
-| 2023 | 3 | Incomplete |
+| 2023 | 1 | Complete |
+| 2023 | 2 | Complete |
+| 2023 | 3 | Part 1 Complete |
 | 2023 | 4 | Incomplete |
 | 2023 | 5 | Incomplete |
 | 2023 | 6 | Incomplete |
