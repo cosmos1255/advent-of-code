@@ -29,7 +29,7 @@ def parseInput(filename):
 
 def findDistance(H, T):
     dist = math.sqrt((H[0]-T[0])*(H[0]-T[0]) + (H[1]-T[1])*(H[1]-T[1]))
-    # print(int(dist))
+    print(int(dist))
     return int(dist)
 
 def moveDiag(H, T):
@@ -125,7 +125,6 @@ def partB(input):
         elif (direction == 'R'):
             loc_H[0] += dist
              
-        # print(f'after H moves: {loc_H} -- {loc_Ts}')
         
         loc_prev = [loc_H[0],loc_H[1]]
         for i, loc_T in enumerate(loc_Ts):
@@ -152,6 +151,7 @@ def partB(input):
                     else:
                         tail_visited.append((loc_T[0], loc_T[1]))
             loc_prev = [loc_T[0], loc_T[1]]
+        print(f'cmd: {cmd}; {len(tail_visited)}; {loc_H} -- {loc_Ts}')
     # print(f'{loc_H} -- {loc_Ts}')
     
     return len(tail_visited)
@@ -161,14 +161,14 @@ def entry():
     input = parseInput("day9_input.txt")
     
     # uncomment below to submit part A
-    ansA = partA(input)
-    print(ansA)
-    submit(1, ansA, 2022, 9, SESSION_ID, USER_AGENT)
+    # ansA = partA(input)
+    # print(ansA)
+    # submit(1, ansA, 2022, 9, SESSION_ID, USER_AGENT)
     
     # uncomment below to submit part B
     ansB = partB(input)
-    # print(ansB)
-    # submit(2, ansB, 2022, 9)
+    print(ansB)
+    # submit(2, ansB, 2022, 9, SESSION_ID, USER_AGENT)
 
 if __name__=="__main__":
     entry()

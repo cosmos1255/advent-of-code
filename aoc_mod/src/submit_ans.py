@@ -13,6 +13,11 @@ def submit(level, answer, year, day, SESSION_ID, USER_AGENT):
     elif b"Did you already complete it" in message:
         print("Already completed this challenge.")
     elif b"That's not the right answer" in message:
-        print("Wrong answer, try again.")
+        if b"too high" in message:
+            print("Wrong answer, too high, try again.")
+        elif b"too low" in message:
+            print("Wrong answer, too low, try again.")
+        else:
+            print("Wrong answer, try again.")
     elif b"You gave an answer too recently" in message:
         print("Gave an answer too recently, try again later.")

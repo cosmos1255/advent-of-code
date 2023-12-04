@@ -12,8 +12,8 @@ I am a professional programmer but still very much a beginner at certain topics 
 |:----:|:---:|:----------------------------:|
 | 2023 | 1 | Complete |
 | 2023 | 2 | Complete |
-| 2023 | 3 | Part 1 Complete |
-| 2023 | 4 | Incomplete |
+| 2023 | 3 | Complete |
+| 2023 | 4 | Complete |
 | 2023 | 5 | Incomplete |
 | 2023 | 6 | Incomplete |
 | 2023 | 7 | Incomplete |
