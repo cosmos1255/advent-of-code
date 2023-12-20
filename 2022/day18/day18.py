@@ -8,8 +8,9 @@ import sys
 scripts_path = os.getcwd()
 scripts_path_split = scripts_path.split('/')
 scripts_path_join = '/'.join(scripts_path_split[:-2])
-sys.path.append(f"{scripts_path_join}/scripts")
+sys.path.append(f"{scripts_path_join}/aoc_mod/src")
 
+from sess_id_u_agent import USER_AGENT, SESSION_ID
 from submit_ans import submit
 
 def parseInput(filename):
@@ -60,12 +61,12 @@ def entry():
     # uncomment below to submit part A
     ansA = partA(input)
     print(ansA)
-    submit(1, ansA, 2022, 18)
+    submit(1, ansA, 2022, 18, SESSION_ID, USER_AGENT)
     
     # uncomment below to submit part B
     # ansB = partB(input)
     # print(ansB)
-    # submit(2, ansB, 2022, 18)
+    # submit(2, ansB, 2022, 18, SESSION_ID, USER_AGENT)
 
 if __name__=="__main__":
     entry()

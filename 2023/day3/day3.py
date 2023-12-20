@@ -42,6 +42,51 @@ def switch(symbols, i, j):
         return 0
     return -1
 
+def getNumbers(input, i, j):
+    
+    numbers = []
+    for k in range(j-3, j+3):
+        if input[i][k].isdigit():
+            numbers.append(input[i][k])
+        elif not input[i][k].isdigit() and k <= j:
+            numbers = []
+        elif not input[i][k].isdigit() and k > j:
+            break
+            
+    return int(''.join(numbers))
+
+def findAdjacent(input, numbers, i, j):
+    adjacent = 0
+    num_list = set()
+    
+    if numbers.__contains__((i-1,j)):
+        adjacent += 1
+        num_list.add(getNumbers(input, i-1, j))
+    if numbers.__contains__((i-1,j-1)):
+        adjacent += 1
+        num_list.add(getNumbers(input, i-1, j-1))
+    if numbers.__contains__((i,j-1)):
+        adjacent += 1
+        num_list.add(getNumbers(input, i, j-1))
+    if numbers.__contains__((i+1,j-1)):
+        adjacent += 1
+        num_list.add(getNumbers(input, i+1, j-1))
+    if numbers.__contains__((i+1,j)):
+        adjacent += 1
+        num_list.add(getNumbers(input, i+1, j))
+    if numbers.__contains__((i+1,j+1)):
+        adjacent += 1
+        num_list.add(getNumbers(input, i+1, j+1))
+    if numbers.__contains__((i,j+1)):
+        adjacent += 1
+        num_list.add(getNumbers(input, i, j+1))
+    if numbers.__contains__((i-1,j+1)):
+        adjacent += 1
+        num_list.add(getNumbers(input, i-1, j+1))
+        
+        
+    return num_list
+
 def partA(input):
     print("Part A")
     
@@ -78,7 +123,28 @@ def partA(input):
 
 def partB(input):
     print("Part B")
-    return 0
+    
+    sum = 0
+    numbers = []
+    asterisks = []
+    # includeFlag = 0
+
+    # find all of the symbols
+    for i, line in enumerate(input):
+        for j, ch in enumerate(line):
+            if ch == '*': # we found symbols
+                asterisks.append((i,j))
+            if ch.isdigit():
+                numbers.append((i,j))
+                
+                
+    for asterisk in asterisks:
+        num_list = findAdjacent(input, numbers, asterisk[0], asterisk[1])
+        if len(num_list) == 2:
+            # print(num_list)
+            sum += num_list.pop() * num_list.pop()
+            
+    return sum
 
 def entry():
     print("2023:Day3")
@@ -90,9 +156,9 @@ def entry():
     # submit(1, ansA, 2023, 3, SESSION_ID, USER_AGENT)
     
     # uncomment below to submit part B
-    # ansB = partB(input)
-    # print(ansB)
-    # submit(2, ansB, 2023, 3, SESSION_ID, USER_AGENT)
+    ansB = partB(input)
+    print(ansB)
+    submit(2, ansB, 2023, 3, SESSION_ID, USER_AGENT)
 
 if __name__=="__main__":
     entry()
