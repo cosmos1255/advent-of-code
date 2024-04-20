@@ -1,4 +1,6 @@
 *.class
 *.pyc
-__pycache__/*
-sess_id_u_agent.py
+__pycache__
+config.json
+dist/
+.vscode
